@@ -1,0 +1,4 @@
+#!/bin/sh 
+#提交前对暂存区的代码执行格式化命令 lint-staged
+. "$(dirname "$0")/_/husky.sh"
+npx lint-staged

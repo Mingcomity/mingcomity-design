@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "../../dist/es",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "baseUrl": ".",
+    "rootDir": "./",
+    "paths": {
+      "@mingcomity-design/components": ["../components"]
+    }
+  },
+  "include": ["./"],
+  "exclude": ["**/__tests__/**", "**/__demos__/**", "**/*.md", "./build/**"],
+  "references": [{ "path": "../components/tsconfig.json" }, { "path": "../utils/tsconfig.json" }]
+}

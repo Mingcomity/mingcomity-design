@@ -1,0 +1,33 @@
+{
+  "name": "@mingcomity-design/theme-chalk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^5.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "cssnano": "^6.1.2",
+    "gulp-postcss": "^10.0.0",
+    "postcss": "^8.4.38",
+    "postcss-color-mix": "^1.1.0",
+    "postcss-each": "^1.1.0",
+    "postcss-each-variables": "^0.3.0",
+    "postcss-for": "^2.1.1",
+    "postcss-import": "^16.1.0",
+    "postcss-nested": "^6.0.1"
+  },
+  "browserslist": [
+    "> 1%",
+    "not ie 11",
+    "not op_mini all"
+  ]
+}

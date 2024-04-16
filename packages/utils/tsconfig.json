@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "../../dist/es/utils",
+    "declaration": true,
+    "baseUrl": "./",
+    "rootDir": "./",
+    "emitDeclarationOnly": true,
+    "composite": true
+  },
+  "include": ["./"],
+  "exclude": ["**/__tests__/**", "**/__demos__/**", "**/*.md", "./build/**"]
+}

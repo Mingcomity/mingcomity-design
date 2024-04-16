@@ -1,0 +1,88 @@
+{
+  "name": "mingcomity-design",
+  "version": "1.0.0",
+  "description": "A Component Library for Vue3",
+  "keywords": [
+    "mingcomity-design",
+    "mingcomity",
+    "component library",
+    "ui framework",
+    "ui",
+    "vue"
+  ],
+  "homepage": "https://mingcomity.cn/",
+  "bugs": {
+    "url": "https://github.com/mingcomity/mingcomity-design/issues"
+  },
+  "license": "MIT",
+  "main": "lib/indx.js",
+  "module": "es/index.mjs",
+  "types": "es/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "exports": {
+    ".": {
+      "types": "./es/index.d.ts",
+      "import": "./es/index.mjs",
+      "require": "./lib/index.js"
+    },
+    "./global": {
+      "types": "./global.d.ts"
+    },
+    "./es": {
+      "types": "./es/index.d.ts",
+      "import": "./es/index.mjs"
+    },
+    "./lib": {
+      "types": "./lib/index.d.ts",
+      "require": "./lib/index.js"
+    },
+    "./es/*.mjs": {
+      "types": "./es/*.d.ts",
+      "import": "./es/*.mjs"
+    },
+    "./es/*": {
+      "types": [
+        "./es/*.d.ts",
+        "./es/*/index.d.ts"
+      ],
+      "import": "./es/*.mjs"
+    },
+    "./lib/*.js": {
+      "types": "./lib/*.d.ts",
+      "require": "./lib/*.js"
+    },
+    "./lib/*": {
+      "types": [
+        "./lib/*.d.ts",
+        "./lib/*/index.d.ts"
+      ],
+      "require": "./lib/*.js"
+    },
+    "./*": "./*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mingcomity/mingcomity-design.git"
+  },
+  "style": "dist/index.css",
+  "sideEffects": [
+    "dist/*",
+    "theme-chalk/**/*.css",
+    "es/components/*/style/*",
+    "lib/components/*/style/*"
+  ],
+  "peerDependencies": {
+    "vue": "^3.4.21"
+  },
+  "devDependencies": {
+    "vue": "^3.4.21",
+    "vue-tsc": "^2.0.6"
+  },
+  "browserslist": [
+    "> 1%",
+    "not ie 11",
+    "not op_mini all"
+  ]
+}
