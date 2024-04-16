@@ -1,13 +1,11 @@
-import { computed, defineComponent, ref, type SlotsType } from 'vue'
-import { buttonProps } from './types'
+import { computed, defineComponent, ref } from 'vue'
+import { ButtonSlots, buttonProps } from './types'
 import { getComponentCls } from '@mingcomity-design/utils'
 
 export default defineComponent({
   name: 'McButton',
   props: buttonProps,
-  slots: Object as SlotsType<{
-    default: {}
-  }>,
+  slots: Object as ButtonSlots,
   setup(props, { slots, expose }) {
     // class处理
     const prefixCls = getComponentCls('button')

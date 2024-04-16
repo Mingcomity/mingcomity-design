@@ -1,4 +1,4 @@
-import type { PropType } from 'vue'
+import type { PropType, SlotsType } from 'vue'
 export type ButtonType = 'primary' | 'success' | 'warning' | 'danger' | 'info'
 export type ButtonSize = 'large' | 'small'
 // 支持button原生的属性
@@ -52,3 +52,6 @@ export const buttonProps = {
     type: Boolean
   }
 }
+export type ButtonSlots = SlotsType<{
+  default: {}
+}>

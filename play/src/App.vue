@@ -15,6 +15,7 @@
     <McButton size="small">Small</McButton><br /><br />
     <McButton size="large" loading>Loading</McButton>
   </div>
+  <div></div>
 </template>
 
 <script lang="ts" setup>
