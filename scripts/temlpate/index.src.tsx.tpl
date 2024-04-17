@@ -1,4 +1,4 @@
-import { defineComponent } from 'vue'
+import { computed, defineComponent } from 'vue'
 import { <%= pascalCaseName %>Slots, <%= camelCaseName %>Props } from './types'
 import { getComponentCls } from '@mingcomity-design/utils'
 
@@ -8,6 +8,11 @@ export default defineComponent({
   slots: Object as <%= pascalCaseName %>Slots,
   setup(props, { slots, expose }) {
     const prefixCls = getComponentCls('<%= name %>')
-    return () => <></>
+    const classes = computed(() => {
+      return {
+        [prefixCls]: true
+      }
+    })
+    return () => <div class={classes}></div>
   }
 })

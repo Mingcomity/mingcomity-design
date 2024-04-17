@@ -13,6 +13,9 @@
     "vue": "^3.4.21"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/vue-fontawesome": "^3.0.6",
     "@mingcomity-design/components": "workspace:^",
     "@mingcomity-design/theme-chalk": "workspace:^",
     "@mingcomity-design/utils": "workspace:^"

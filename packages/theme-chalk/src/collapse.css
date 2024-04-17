@@ -1,0 +1,15 @@
+.mc-collapse {
+  --mc-collapse-border-color: var(--mc-border-color-light);
+  --mc-collapse-header-height: 48px;
+  --mc-collapse-header-bg-color: var(--mc-fill-color-blank);
+  --mc-collapse-header-text-color: var(--mc-text-color-primary);
+  --mc-collapse-header-font-size: 13px;
+  --mc-collapse-content-bg-color: var(--mc-fill-color-blank);
+  --mc-collapse-content-font-size: 13px;
+  --mc-collapse-content-text-color: var(--mc-text-color-primary);
+  --mc-collapse-disabled-text-color: var(--mc-disabled-text-color);
+  --mc-collapse-disabled-border-color: var(--mc-border-color-lighter);
+
+  border-top: 1px solid var(--mc-collapse-border-color);
+  border-bottom: 1px solid var(--mc-collapse-border-color);
+}
