@@ -1,0 +1,63 @@
+.mc-alert {
+  --mc-alter-font-weight: var(--mc-font-weight-primary);
+  --mc-alter-font-color: var(--mc-color-info);
+  --mc-alter-bg-color: var(--mc-color-info-light-9);
+  --mc-alter-padding: 8px 16px;
+  --mc-alter-radius: 6px;
+}
+
+.mc-alert {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--mc-alter-padding);
+  font-size: var(--mc-font-size-base);
+  font-weight: var(--mc-alter-font-weight);
+  color: var(--mc-alter-font-color);
+  background-color: var(--mc-alter-bg-color);
+  border-radius: var(--mc-alter-radius);
+
+  & + & {
+    margin-top: 20px;
+  }
+
+  &.is-dark {
+    .mc-alert__close {
+      color: var(--mc-fill-color-light);
+    }
+  }
+}
+
+@each $val in primary, success, warning, info, danger {
+  .mc-alert--$(val) {
+    --mc-alter-font-color: var(--mc-color-$(val));
+    --mc-alter-bg-color: var(--mc-color-$(val)-light-9);
+  }
+
+  .mc-alert--$(val).is-dark {
+    --mc-alter-font-color: var(--mc-fill-color-light);
+    --mc-alter-bg-color: var(--mc-color-$(val));
+  }
+}
+
+.mc-alert__title {
+  line-height: 24px;
+}
+
+.mc-alert__close {
+  color: var(--mc-text-color-placeholder);
+  cursor: pointer;
+}
+
+.mc-alert-leave-from {
+  opacity: 1;
+}
+
+.mc-alert-leave-active {
+  transition: opacity var(--mc-transition-duration);
+}
+
+.mc-alert-leave-to {
+  opacity: 0;
+}

@@ -13,6 +13,6 @@ export default defineComponent({
         [prefixCls]: true
       }
     })
-    return () => <div class={classes}></div>
+    return () => <div class={classes.value}></div>
   }
 })
