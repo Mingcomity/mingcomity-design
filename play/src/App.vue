@@ -20,7 +20,7 @@
     <br /><br />
   </div>
   <div style="width: 500px; margin: 24px 0">
-    <McCollapse v-model="openedValue">
+    <McCollapse v-model="openedValue" @change="onChange">
       <McCollapseItem name="a">
         <template #title>
           <h1>标题a</h1>
@@ -102,18 +102,22 @@ import {
   faUserSecret
 } from '@fortawesome/free-solid-svg-icons'
 library.add(faArrowUp, faUserSecret)
-// import {
-//   McIcon,
-//   McButton,
-//   McCollapse,
-//   McCollapseItem,
-//   McAlert
-// } from '@mingcomity-design/components'
+import {
+  McIcon,
+  McButton,
+  McCollapse,
+  McCollapseItem,
+  McAlert
+} from '@mingcomity-design/components'
 // import '@mingcomity-design/theme-chalk/src/alert.css'
 // import '@mingcomity-design/theme-chalk/src/collapse-item.css'
 import { ref } from 'vue'
 
 const openedValue = ref(['a'])
+
+const onChange = (a) => {
+  console.log(a)
+}
 
 function aaa() {
   console.log('点击了')

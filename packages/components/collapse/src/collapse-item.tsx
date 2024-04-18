@@ -75,7 +75,7 @@ export default defineComponent({
           <McIcon icon="angle-right" class="header-angle" />
         </div>
         <Transition
-          name="skide"
+          name="slide"
           onBeforeEnter={transitionEvents.beforeEnter}
           onEnter={transitionEvents.enter}
           onAfterEnter={transitionEvents.afterEnter}
@@ -83,7 +83,7 @@ export default defineComponent({
           onLeave={transitionEvents.leave}
           onAfterLeave={transitionEvents.afterLeave}
         >
-          <div class={`${prefixCls}__warpper`} v-show={isActive.value}>
+          <div class={`${prefixCls}__wrapper`} v-show={isActive.value}>
             <div class={contentClasses.value} id={`item-content-${props.name}`}>
               {slots.default?.({})}
             </div>

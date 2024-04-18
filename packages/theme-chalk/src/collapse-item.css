@@ -43,7 +43,7 @@
   will-change: height;
 }
 
-.skide-enter-active,
-.skide-leave-active {
+.slide-enter-active,
+.slide-leave-active {
   transition: height var(--mc-transition-duration) ease-in-out;
 }

@@ -17,18 +17,21 @@ export default defineComponent({
 
     const activeNames = ref<NameType[]>(props.modelValue ?? [])
     const handleItemClick = (item: NameType) => {
+      let _activeNames = [...activeNames.value]
       if (props.accordion) {
+        _activeNames = [activeNames.value[0] === item ? '' : item]
         activeNames.value = [activeNames.value[0] === item ? '' : item]
       } else {
         const index = activeNames.value.indexOf(item)
         if (index > -1) {
-          activeNames.value.splice(index, 1)
+          _activeNames.splice(index, 1)
         } else {
-          activeNames.value.push(item)
+          _activeNames.push(item)
         }
+        activeNames.value = _activeNames
       }
-      emit('change', activeNames.value)
-      emit('update:modelValue', activeNames.value)
+      emit('change', _activeNames)
+      emit('update:modelValue', _activeNames)
     }
     provide(collapseContextKey, {
       activeNames,

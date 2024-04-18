@@ -1,6 +1,6 @@
 import { describe, test, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
-import Button from '../src/index'
+import Button from '../'
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { McIcon } from '../../icon'
