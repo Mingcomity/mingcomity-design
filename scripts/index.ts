@@ -35,7 +35,7 @@ const getCreatedFiles = (name: string) => {
       template: path.resolve(__dirname, './temlpate/css.style.ts.tpl')
     },
     {
-      file: path.resolve(componentFolder, name, '_test_', 'index.tsx'),
+      file: path.resolve(componentFolder, name, '__tests__', 'index.tsx'),
       template: path.resolve(__dirname, './temlpate/index.test.tsx.tpl')
     },
     {
@@ -59,7 +59,7 @@ const addComponent = async (name: string) => {
     let data = await fs.readFile(tplPath, 'utf-8')
 
     // 编译模板
-    const compiled = template(data, {}, null)
+    const compiled = template(data)
     data = compiled({
       name,
       camelCaseName: camelCase(name),
