@@ -1,6 +1,11 @@
 import { Transition, computed, defineComponent, inject } from 'vue'
 import { CollapseItemSlots, collapseContextKey, collapseItemProps } from './types'
 import { getComponentCls } from '@mingcomity-design/utils'
+import { McIcon } from '../../icon'
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
+library.add(faAngleRight)
 
 export default defineComponent({
   name: 'McCollapseItem',
@@ -67,6 +72,7 @@ export default defineComponent({
           onClick={() => handleClick()}
         >
           {slots.title?.({}) ?? props.title}
+          <McIcon icon="angle-right" class="header-angle" />
         </div>
         <Transition
           name="skide"

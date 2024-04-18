@@ -27,9 +27,9 @@
     }
   }
 
-  /* .header-angle {
+  .header-angle {
     transition: transform var(--mc-transition-duration);
-  } */
+  }
 }
 
 .mc-collapse-item__content {
@@ -45,5 +45,5 @@
 
 .skide-enter-active,
 .skide-leave-active {
-  transition: height 0.3s ease-in-out;
+  transition: height var(--mc-transition-duration) ease-in-out;
 }

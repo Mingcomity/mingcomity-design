@@ -1,0 +1,17 @@
+.mc-icon {
+  --mc-icon-color: inherit;
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: inherit;
+  color: var(--mc-icon-color);
+  fill: currentcolor;
+}
+
+@each $val in primary, info, success, warning, danger {
+  .mc-icon--$(val) {
+    --mc-icon-color: var(--mc-color-$(val));
+  }
+}

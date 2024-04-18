@@ -2,6 +2,12 @@ import { computed, defineComponent, ref } from 'vue'
 import { ButtonSlots, buttonProps } from './types'
 import { getComponentCls } from '@mingcomity-design/utils'
 
+import { McIcon } from '../../icon'
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'
+library.add(faSpinner)
+
 export default defineComponent({
   name: 'McButton',
   props: buttonProps,
@@ -17,7 +23,8 @@ export default defineComponent({
         'is-plain': props.plain,
         'is-round': props.round,
         'is-circle': props.circle,
-        'is-disabled': props.disabled
+        'is-disabled': props.disabled,
+        'is-loading': props.loading
       }
     })
     // 暴露属性
@@ -27,10 +34,12 @@ export default defineComponent({
       <button
         ref={_ref}
         class={classes.value}
-        disabled={props.disabled}
+        disabled={props.disabled || props.loading}
         type={props.nativeType}
         autofocus={props.autofocus}
       >
+        {props.loading && <McIcon icon="spinner" spin />}
+        {props.icon && <McIcon icon={props.icon} />}
         <span>{slots.default?.({})}</span>
       </button>
     )

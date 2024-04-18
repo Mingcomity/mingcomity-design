@@ -29,14 +29,6 @@ h4,
 h5,
 h6 {
   color: var(--mc-text-color-regular);
-
-  &:first-child {
-    margin-top: 0;
-  }
-
-  &:last-child {
-    margin-bottom: 0;
-  }
 }
 
 h1 {

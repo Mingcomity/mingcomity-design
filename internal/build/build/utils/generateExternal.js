@@ -1,6 +1,6 @@
-const { compPackage } = require('./paths')
+const { epPackage } = require('./paths')
 const getCompPackage = () => {
-  const { version, dependencies = {}, peerDependencies = {} } = require(compPackage)
+  const { version, dependencies = {}, peerDependencies = {} } = require(epPackage)
   return {
     version,
     dependencies: Object.keys(dependencies),
@@ -11,12 +11,14 @@ const getCompPackage = () => {
 const generateExternal = (options) => {
   const { dependencies, peerDependencies } = getCompPackage()
   const packages = peerDependencies
-  if (options.full) {
+  if (!options.full) {
     packages.push(...dependencies)
   }
 
   return (id) => {
-    return packages.some((pkg) => id === pkg || (options.full && id.startsWith(`${pkg}/`)))
+    return [...new Set(packages)].some((pkg) => id === pkg || id.startsWith(`${pkg}/`))
   }
 }
-module.exports = generateExternal
+module.exports = {
+  generateExternal
+}

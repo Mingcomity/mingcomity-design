@@ -14,6 +14,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/vue-fontawesome": "^3.0.6",
+    "lodash-es": "^4.17.21",
     "vue": "^3.4.21"
   },
   "devDependencies": {
@@ -24,6 +28,7 @@
     "@mingcomity-design/stylelint-config": "workspace:^",
     "@mingcomity-design/utils": "workspace:^",
     "@types/fs-extra": "^11.0.4",
+    "@types/lodash-es": "^4.17.12",
     "@types/prompts": "^2.4.9",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
@@ -31,7 +36,6 @@
     "fs-extra": "^11.2.0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
-    "lodash-es": "^4.17.21",
     "mingcomity-design": "workspace:^",
     "postcss": "^8.4.38",
     "prettier": "^3.0.3",

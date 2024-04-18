@@ -19,6 +19,7 @@ const { MingcomityDesignAlias } = require('../plugins/mingcomity-design-alias')
 const { version } = require('../utils/canstans')
 // 工具函数
 const { excludeFiles } = require('../utils/excludeFiles')
+const { generateExternal } = require('../utils/generateExternal')
 
 const { inputFolder, outputCjsFolder, outputEsmFolder, cssInputFolder } = require('../utils/paths')
 
@@ -58,7 +59,7 @@ const buildModules = async () => {
       })
     ],
     treeshake: true,
-    external: ['vue']
+    external: generateExternal({ full: false })
   })
 
   // 输出文件

@@ -17,7 +17,7 @@ const { default: esbuild, minify: minifyPlugin } = require('rollup-plugin-esbuil
 const { version } = require('../utils/canstans')
 
 const { inputFolder, outputUmdFolder } = require('../utils/paths')
-// const generateExternal = require('../utils/generateExternal')
+const { generateExternal } = require('../utils/generateExternal')
 const banner = `/*! mingcomity desgin v${version} */\n`
 
 const build = async (minify = false) => {
@@ -45,7 +45,7 @@ const build = async (minify = false) => {
       minify ? minifyPlugin({ target: 'es2018', sourceMap: minify }) : null
     ],
     treeshake: true,
-    external: ['vue']
+    external: generateExternal({ full: true })
   })
 
   // 输出文件

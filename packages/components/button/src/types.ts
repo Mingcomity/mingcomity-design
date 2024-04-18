@@ -46,7 +46,7 @@ export const buttonProps = {
     type: Boolean
   },
   icon: {
-    type: Boolean
+    type: String
   },
   loading: {
     type: Boolean

@@ -15,12 +15,16 @@
     <br /><br />
     <McButton size="large">Large</McButton>
     <McButton size="small">Small</McButton><br /><br />
-    <McButton size="large" loading>Loading</McButton>
+    <McButton loading>Loading</McButton>
+    <McButton icon="arrow-up">Icon</McButton>
+    <br /><br />
   </div>
   <div style="width: 500px; margin: 24px 0">
     <McCollapse v-model="openedValue">
       <McCollapseItem name="a">
         <template #title>
+          <h1>标题a</h1>
+          <h1>标题a</h1>
           <h1>标题a</h1>
         </template>
         <h1>headline title</h1>
@@ -38,15 +42,31 @@
       </McCollapseItem>
     </McCollapse>
   </div>
+  <div>
+    <McIcon icon="fa-user-secret" type="danger" />
+    <McIcon
+      icon="fa-user-secret"
+      type="danger"
+      color="#4545aa"
+    />
+  </div>
 </template>
 
 <script lang="ts" setup>
+import { library } from '@fortawesome/fontawesome-svg-core'
 import {
-  McCollapseItem,
-  McCollapse
-} from '@mingcomity-design/components'
-import '@mingcomity-design/theme-chalk/src/collapse.css'
-import '@mingcomity-design/theme-chalk/src/collapse-item.css'
+  faArrowUp,
+  faUserSecret
+} from '@fortawesome/free-solid-svg-icons'
+library.add(faArrowUp, faUserSecret)
+// import {
+//   McIcon,
+//   McButton,
+//   McCollapse,
+//   McCollapseItem
+// } from '@mingcomity-design/components'
+// import '@mingcomity-design/theme-chalk/src/icon.css'
+// import '@mingcomity-design/theme-chalk/src/collapse-item.css'
 import { ref } from 'vue'
 
 const openedValue = ref(['a'])
