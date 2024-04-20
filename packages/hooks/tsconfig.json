@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "../../dist/es/hooks",
+    "baseUrl": "./",
+    "rootDir": "./",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "composite": true
+  },
+  "include": ["./"],
+  "exclude": ["**/__tests__/**", "**/__demos__/**", "**/*.md", "./build/**", "**/style/index.ts"],
+  "references": []
+}

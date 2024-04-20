@@ -12,5 +12,8 @@
   },
   "include": ["./"],
   "exclude": ["**/__tests__/**", "**/__demos__/**", "**/*.md", "./build/**"],
-  "references": [{ "path": "../components/tsconfig.json" }, { "path": "../utils/tsconfig.json" }]
+  "references": [
+    { "path": "../components/tsconfig.lib.json" },
+    { "path": "../utils/tsconfig.json" }
+  ]
 }

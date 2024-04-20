@@ -35,7 +35,7 @@ const getCreatedFiles = (name: string) => {
       template: path.resolve(__dirname, './temlpate/css.style.ts.tpl')
     },
     {
-      file: path.resolve(componentFolder, name, '__tests__', 'index.tsx'),
+      file: path.resolve(componentFolder, name, '__tests__', `${name}.test.tsx`),
       template: path.resolve(__dirname, './temlpate/index.test.tsx.tpl')
     },
     {

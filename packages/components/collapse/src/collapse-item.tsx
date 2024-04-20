@@ -39,28 +39,28 @@ export default defineComponent({
       collapseContext?.handleItemClick(props.name ?? '')
     }
 
-    const transitionEvents: Record<string, (el: Element) => void> = {
-      beforeEnter(el) {
-        ;(el as HTMLElement).style.height = '0px'
-        ;(el as HTMLElement).style.overflow = 'hidden'
+    const transitionEvents: Record<string, (el: HTMLElement) => void> = {
+      onBeforeEnter(el) {
+        el.style.height = '0px'
+        el.style.overflow = 'hidden'
       },
-      enter(el) {
-        ;(el as HTMLElement).style.height = `${el.scrollHeight}px`
+      onEnter(el) {
+        el.style.height = `${el.scrollHeight}px`
       },
-      afterEnter(el) {
-        ;(el as HTMLElement).style.height = ''
-        ;(el as HTMLElement).style.overflow = ''
+      onAfterEnter(el) {
+        el.style.height = ''
+        el.style.overflow = ''
       },
-      beforeLeave(el) {
-        ;(el as HTMLElement).style.height = `${el.scrollHeight}px`
-        ;(el as HTMLElement).style.overflow = 'hidden'
+      onBeforeLeave(el) {
+        el.style.height = `${el.scrollHeight}px`
+        el.style.overflow = 'hidden'
       },
-      leave(el) {
-        ;(el as HTMLElement).style.height = '0px'
+      onLeave(el) {
+        el.style.height = '0px'
       },
-      afterLeave(el) {
-        ;(el as HTMLElement).style.height = ''
-        ;(el as HTMLElement).style.overflow = ''
+      onAfterLeave(el) {
+        el.style.height = ''
+        el.style.overflow = ''
       }
     }
 
@@ -74,15 +74,7 @@ export default defineComponent({
           {slots.title?.({}) ?? props.title}
           <McIcon icon="angle-right" class="header-angle" />
         </div>
-        <Transition
-          name="slide"
-          onBeforeEnter={transitionEvents.beforeEnter}
-          onEnter={transitionEvents.enter}
-          onAfterEnter={transitionEvents.afterEnter}
-          onBeforeLeave={transitionEvents.beforeLeave}
-          onLeave={transitionEvents.leave}
-          onAfterLeave={transitionEvents.afterLeave}
-        >
+        <Transition name="slide" {...transitionEvents}>
           <div class={`${prefixCls}__wrapper`} v-show={isActive.value}>
             <div class={contentClasses.value} id={`item-content-${props.name}`}>
               {slots.default?.({})}

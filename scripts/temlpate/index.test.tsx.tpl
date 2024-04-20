@@ -1,12 +1,10 @@
 import { describe, test, expect, vi, beforeAll } from 'vitest'
-import { DOMWrapper, VueWrapper, mount } from '@vue/test-utils'
+import { VueWrapper, mount } from '@vue/test-utils'
 import { Mc<%= pascalCaseName %> } from '../'
 
-
-const onChange = vi.fn()
 let wrapper: VueWrapper
 
-describe('Collapse components2', () => {
+describe('Collapse component', () => {
   // 调用测试用例前会执行的事
   beforeAll(() => {
     wrapper = mount(

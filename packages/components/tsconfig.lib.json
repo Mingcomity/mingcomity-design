@@ -1,0 +1,19 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "../../dist/es/components",
+    "baseUrl": "./",
+    "rootDir": "./",
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "composite": true,
+    "paths": {
+      "@mingcomity-design/theme-chalk": ["../theme-chalk"]
+    }
+  },
+  "include": ["./"],
+  "exclude": ["**/__tests__/**", "**/__demos__/**", "**/*.md", "./build/**", "**/style/index.ts"],
+  "references": [{ "path": "../utils/tsconfig.json" }, { "path": "../hooks/tsconfig.json" }]
+}
