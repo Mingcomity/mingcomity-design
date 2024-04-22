@@ -4,7 +4,7 @@ import { McDropdown } from '../'
 
 let wrapper: VueWrapper
 
-describe('Collapse component', () => {
+describe('dropdown component', () => {
   // 调用测试用例前会执行的事
   beforeAll(() => {
     wrapper = mount(() => <McDropdown></McDropdown>, {

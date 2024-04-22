@@ -4,6 +4,7 @@ import { McIcon } from '@mingcomity-design/components/icon'
 import { McAlert } from '@mingcomity-design/components/alert'
 import { McTooltip } from '@mingcomity-design/components/tooltip'
 import { McDropdown } from '@mingcomity-design/components/dropdown'
+import { McMessage } from '@mingcomity-design/components/message'
 import type { DefineComponent } from 'vue'
 
 export default [
@@ -13,5 +14,6 @@ export default [
   McIcon,
   McAlert,
   McTooltip,
-  McDropdown
+  McDropdown,
+  McMessage
 ] as unknown as DefineComponent[]

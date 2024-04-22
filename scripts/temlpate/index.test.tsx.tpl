@@ -4,7 +4,7 @@ import { Mc<%= pascalCaseName %> } from '../'
 
 let wrapper: VueWrapper
 
-describe('Collapse component', () => {
+describe('<%= pascalCaseName %> component', () => {
   // 调用测试用例前会执行的事
   beforeAll(() => {
     wrapper = mount(

@@ -5,6 +5,9 @@ declare module 'vue' {
     McCollapse: (typeof import('mingcomity-design'))['McCollapse']
     McCollapseItem: (typeof import('mingcomity-design'))['McCollapseItem']
   }
+  export interface ComponentCustomProperties {
+    $message: (typeof import('@mingcomity-design/components'))['McMessage']
+  }
 }
 
 export {}

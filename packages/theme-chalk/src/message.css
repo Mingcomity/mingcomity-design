@@ -1,0 +1,66 @@
+.mc-message {
+  --mc-message-bg-color: var(--mc-color-info-light-9);
+  --mc-message-border-color: var(--mc-border-color-lighter);
+  --mc-message-padding: 11px 15px;
+  --mc-message-close-size: 16px;
+  --mc-message-close-icon-color: var(--mc-text-color-placeholder);
+  --mc-message-close-hover-color: var(--mc-text-color-secondary);
+}
+
+.mc-message {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  max-width: calc(100% - 32px);
+  padding: var(--mc-message-padding);
+  background-color: var(--mc-message-bg-color);
+  border-color: var(--mc-message-border-color);
+  border-style: var(--mc-border-style);
+  border-width: var(--mc-border-width);
+  border-radius: var(--mc-border-radius-base);
+  transition:
+    top var(--mc-transition-duration),
+    opacity var(--mc-transition-duration),
+    transform var(--mc-transition-duration);
+  transform: translateX(-50%);
+
+  .mc-message__content {
+    color: var(--mc-message-text-color);
+    overflow-wrap: anywhere;
+  }
+
+  &.is-close .mc-message__content {
+    padding-right: 8px;
+  }
+
+  .mc-message__close {
+    display: flex;
+    align-items: center;
+  }
+
+  .mc-message__close svg {
+    cursor: pointer;
+  }
+}
+
+@each $val in info, success, warning, danger {
+  .mc-message--$(val) {
+    --mc-message-bg-color: var(--mc-color-$(val)-light-9);
+    --mc-message-border-color: var(--mc-color-$(val)-light-8);
+    --mc-message-text-color: var(--mc-color-$(val));
+
+    .mc-message__close {
+      --mc-icon-color: var(--mc-color-$(val));
+    }
+  }
+}
+
+.fade-up-enter-from,
+.fade-up-leave-to {
+  opacity: 0;
+  transform: translate(-50%, -100%);
+}

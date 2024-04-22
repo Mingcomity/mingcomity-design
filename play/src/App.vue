@@ -58,7 +58,6 @@
       />
     </div>
   </div>
-
   <div style="margin: 20px 0; display: flex; gap: 20px">
     <div style="width: 100%">
       <McAlert title="this is the alter" />
@@ -158,11 +157,33 @@
             { key: 3, label: 'item3', divided: true },
             { key: 4, label: 'item4' }
           ]"
-          @visible-change="(e) => inlineConsole(e)"
-          @select="(e) => inlineConsole(e)"
+          @visible-change="(e: any) => inlineConsole(e)"
+          @select="(e: any) => inlineConsole(e)"
         >
           <McButton>Dropdown</McButton>
         </McDropdown>
+      </div>
+      <div
+        style="
+          width: 100%;
+          display: inline-flex;
+          gap: 20px;
+          align-self: flex-start;
+          flex-wrap: wrap;
+        "
+      >
+        <McButton @click="() => messageShow('info')">
+          info
+        </McButton>
+        <McButton @click="() => messageShow('success')">
+          success
+        </McButton>
+        <McButton @click="() => messageShow('warning')">
+          warning
+        </McButton>
+        <McButton @click="() => messageShow('danger')">
+          danger
+        </McButton>
       </div>
     </div>
   </div>
@@ -182,11 +203,14 @@ library.add(faArrowUp, faUserSecret)
 //   McCollapseItem,
 //   McAlert,
 //   McTooltip,
-//   McDropdown
+//   McDropdown,
+//   McMessage
 // } from '@mingcomity-design/components'
-// import '@mingcomity-design/components/dropdown/style'
+// import '@mingcomity-design/components/message/style'
+// @ts-ignore
+import { McMessage } from '../../dist/es'
 import type { TooltipInstance } from '../../dist/es/components'
-import { ref, h } from 'vue'
+import { ref, h, getCurrentInstance } from 'vue'
 
 const tooltipRef = ref<TooltipInstance | null>(null)
 function openManual() {
@@ -208,6 +232,22 @@ function close() {
 
 const inlineConsole = (...args: any[]) => {
   console.log(args)
+}
+
+function messageShow(type: any) {
+  McMessage({
+    message: 'hello message',
+    duration: 3000,
+    showClose: true,
+    type
+  })
+  const instance = getCurrentInstance()
+  instance?.proxy?.$message({
+    message: 'hello message 全局方法',
+    duration: 4000,
+    showClose: true,
+    type
+  })
 }
 </script>
 <style scoped></style>
