@@ -1,7 +1,7 @@
 const { Transform } = require('stream')
 
 // const PKG_PREFIX = '@mingcomity-design'
-const PKG_NAME = 'mingcomity-design'
+const PKG_NAME = 'mingcomity-design/es'
 
 const contentForFile = (file) => {
   const content = file.contents.toString()
