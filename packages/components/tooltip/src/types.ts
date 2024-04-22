@@ -56,7 +56,7 @@ export const tooltipProps = {
 }
 export const tooltipEmits = {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  'visible-change': (value: Boolean) => true
+  'visible-change': (value: boolean) => true
 }
 
 export type TooltipSlots = SlotsType<{

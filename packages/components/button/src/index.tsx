@@ -40,7 +40,7 @@ export default defineComponent({
       >
         {props.loading && <McIcon icon="spinner" spin />}
         {props.icon && <McIcon icon={props.icon} />}
-        <span>{slots.default?.({})}</span>
+        {slots.default?.({}) && <span>{slots.default?.({})}</span>}
       </button>
     )
   }

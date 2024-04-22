@@ -3,7 +3,7 @@
     <div style="width: 100%">
       <McButton disabled>Disabled McButton</McButton>
       <McButton round>Round Button</McButton>
-      <McButton circle>VK</McButton>
+      <McButton icon="arrow-up" circle></McButton>
       <McButton disabled>Disabled Button</McButton>
       <br /><br />
       <McButton type="primary" @click="aaa"
@@ -20,6 +20,7 @@
       <McButton type="danger" plain>Danger</McButton>
       <br /><br />
       <McButton size="large">Large</McButton>
+      <McButton>default</McButton>
       <McButton size="small">Small</McButton><br /><br />
       <McButton loading>Loading</McButton>
       <McButton icon="arrow-up">Icon</McButton>
@@ -95,34 +96,74 @@
     <div
       style="
         width: 100%;
-        display: inline-flex;
+        display: flex;
+        flex-direction: column;
         gap: 20px;
-        align-self: flex-start;
-        flex-wrap: wrap;
       "
     >
-      <McTooltip
-        placement="top"
-        :open-delay="200"
-        :close-delay="200"
-        effect="dark"
+      <div
+        style="
+          width: 100%;
+          display: inline-flex;
+          gap: 20px;
+          align-self: flex-start;
+          flex-wrap: wrap;
+        "
       >
-        <McButton>hover McTooltip </McButton>
-        <template #content>popper!!!</template>
-      </McTooltip>
-      <McTooltip
-        placement="top"
-        trigger="click"
-        content="popper!!!"
+        <McTooltip
+          placement="top"
+          :open-delay="200"
+          :close-delay="200"
+          effect="dark"
+        >
+          <McButton>hover McTooltip </McButton>
+          <template #content>popper!!!</template>
+        </McTooltip>
+        <McTooltip
+          placement="top"
+          trigger="click"
+          content="popper!!!"
+        >
+          <McButton>click McTooltip </McButton>
+        </McTooltip>
+        <McTooltip
+          manual
+          placement="right"
+          ref="tooltipRef"
+        >
+          <McButton>manual McTooltip </McButton>
+          <template #content>popper!!!</template>
+        </McTooltip>
+        <McButton @click="openManual"
+          >show tooltip</McButton
+        >
+        <McButton @click="closeManual"
+          >hide tooltip</McButton
+        >
+      </div>
+      <div
+        style="
+          width: 100%;
+          display: inline-flex;
+          gap: 20px;
+          align-self: flex-start;
+          flex-wrap: wrap;
+        "
       >
-        <McButton>click McTooltip </McButton>
-      </McTooltip>
-      <McTooltip manual placement="right" ref="tooltipRef">
-        <McButton>manual McTooltip </McButton>
-        <template #content>popper!!!</template>
-      </McTooltip>
-      <McButton @click="openManual">show tooltip</McButton>
-      <McButton @click="closeManual">hide tooltip</McButton>
+        <McDropdown
+          trigger="click"
+          :menu-options="[
+            { key: 1, label: h('b', 'this is bold') },
+            { key: 2, label: 'item2', disabled: true },
+            { key: 3, label: 'item3', divided: true },
+            { key: 4, label: 'item4' }
+          ]"
+          @visible-change="(e) => inlineConsole(e)"
+          @select="(e) => inlineConsole(e)"
+        >
+          <McButton>Dropdown</McButton>
+        </McDropdown>
+      </div>
     </div>
   </div>
 </template>
@@ -141,11 +182,11 @@ library.add(faArrowUp, faUserSecret)
 //   McCollapseItem,
 //   McAlert,
 //   McTooltip,
-//   type TooltipInstance
+//   McDropdown
 // } from '@mingcomity-design/components'
-// import '@mingcomity-design/theme-chalk/src/tooltip.css'
+// import '@mingcomity-design/components/dropdown/style'
 import type { TooltipInstance } from '../../dist/es/components'
-import { ref } from 'vue'
+import { ref, h } from 'vue'
 
 const tooltipRef = ref<TooltipInstance | null>(null)
 function openManual() {
@@ -163,6 +204,10 @@ function aaa() {
 }
 function close() {
   console.log('关闭')
+}
+
+const inlineConsole = (...args: any[]) => {
+  console.log(args)
 }
 </script>
 <style scoped></style>

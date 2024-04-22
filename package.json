@@ -8,7 +8,8 @@
     "prepare": "husky",
     "build": "pnpm run -C internal/build build",
     "dev": "pnpm run -C play dev",
-    "gen": "tsx scripts/index.ts"
+    "gen": "tsx scripts/index.ts",
+    "lint": "lint-staged"
   },
   "keywords": [],
   "author": "",

@@ -71,6 +71,7 @@
 
   /* circle */
   &.is-circle {
+    width: 32px;
     padding: 8px;
     border-radius: 50%;
   }
