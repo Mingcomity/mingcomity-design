@@ -47,8 +47,8 @@ export default defineComponent({
       showPopper.value = false
       emit('visible-change', showPopper.value)
     }
-    const openDebounce = debounce(openPopper, props.openDelay)
-    const closeDebounce = debounce(closePopper, props.closeDelay)
+    const openDebounce = debounce(openPopper, props.openDelay < 50 ? 50 : props.openDelay)
+    const closeDebounce = debounce(closePopper, props.closeDelay < 50 ? 50 : props.closeDelay)
 
     const openFinal = () => {
       // 取消关闭
@@ -104,7 +104,7 @@ export default defineComponent({
       if (props.trigger === 'click') {
         events.value.onClick = toggerPopper
       } else {
-        events.value.onMouseenter = openFinal
+        outerEvents.value.onMouseenter = openFinal
         outerEvents.value.onMouseleave = closeFinal
       }
     }

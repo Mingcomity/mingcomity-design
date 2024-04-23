@@ -43,11 +43,11 @@ export const tooltipProps = {
   },
   openDelay: {
     type: Number,
-    default: 0
+    default: 50
   },
   closeDelay: {
     type: Number,
-    default: 0
+    default: 50
   },
   effect: {
     type: String as PropType<TooltipProps['effect']>,
