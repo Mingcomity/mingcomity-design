@@ -64,14 +64,14 @@ demo-preview=../../examples/dropdown/manual.vue
 | disabled | 是否禁用       | `boolean`              | false  |
 | divided  | 是否显示分隔符 | `boolean`              | false  |
 
-### Events
+### Dropdown 事件
 
 | 属性名         | 说明                           | 类型         |
 | :------------- | :----------------------------- | :----------- |
 | visible-change | 当 tooltip 展示/隐藏时被触发   | `boolean`    |
 | select         | 当选择到某一个选项的时候被触发 | `MenuOption` |
 
-### Exposes
+### Dropdown 实例方法
 
 | 属性名 | 说明 | 类型                                           |
 | :----- | :--- | :--------------------------------------------- |
