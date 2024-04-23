@@ -8,6 +8,7 @@
     "prepare": "husky",
     "build": "pnpm run -C internal/build build",
     "dev": "pnpm run -C play dev",
+    "docs:dev": "pnpm run -C docs docs:dev",
     "gen": "tsx scripts/index.ts",
     "lint": "lint-staged"
   },
@@ -20,7 +21,6 @@
     "@fortawesome/vue-fontawesome": "^3.0.6",
     "@popperjs/core": "^2.11.6",
     "lodash-es": "^4.17.21",
-    "mingcomity-design": "workspace:^",
     "vue": "^3.4.21"
   },
   "devDependencies": {
@@ -30,6 +30,7 @@
     "@mingcomity-design/eslint-config": "workspace:^",
     "@mingcomity-design/hooks": "workspace:^",
     "@mingcomity-design/stylelint-config": "workspace:^",
+    "@mingcomity-design/theme-chalk": "workspace:^",
     "@mingcomity-design/utils": "workspace:^",
     "@types/fs-extra": "^11.0.4",
     "@types/lodash-es": "^4.17.12",
@@ -45,7 +46,13 @@
     "husky": "^9.0.11",
     "jsdom": "^24.0.0",
     "lint-staged": "^15.2.2",
+    "mingcomity-design": "workspace:^",
     "postcss": "^8.4.38",
+    "postcss-color-mix": "^1.1.0",
+    "postcss-each": "^1.1.0",
+    "postcss-each-variables": "^0.3.0",
+    "postcss-for": "^2.1.1",
+    "postcss-nested": "^6.0.1",
     "prettier": "^3.0.3",
     "prompts": "^2.4.2",
     "stylelint": "^16.3.1",

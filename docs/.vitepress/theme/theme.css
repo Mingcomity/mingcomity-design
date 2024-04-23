@@ -24,3 +24,23 @@ body {
   --vp-home-hero-image-background-image: linear-gradient(-45deg, #fcb0f3 50%, #2f97ff 50%);
   --vp-home-hero-image-filter: blur(62px);
 }
+
+/**
+ * reset
+ * ------------------------------------------------------------------------- */
+.vitepress-demo-preview__element-plus__container {
+  box-shadow: none;
+}
+
+body {
+  color: var(--vp-c-text-1);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: inherit;
+}

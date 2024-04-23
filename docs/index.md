@@ -3,19 +3,19 @@
 layout: home
 
 hero:
-  name: "Mingcomity-design"
-  text: "Vue3 组件库"
-  tagline: "基于Vue3、Typescript、Tsx 实现的一个面向开发者的组件库"
+  name: 'Mingcomity-design'
+  text: 'Vue3 组件库'
+  tagline: '基于Vue3、Typescript、Tsx 实现的一个面向开发者的组件库'
   image:
     src: /images/logo.svg
     alt: tmui3.0
   actions:
     - theme: brand
       text: 快速开始
-      link: /markdown-examples
+      link: /zh-CN/guide/installation
     - theme: alt
       text: 组件
-      link: /api-examples
+      link: /zh-CN/components/button
 
 features:
   - icon: 😎

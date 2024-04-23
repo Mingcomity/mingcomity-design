@@ -1,4 +1,5 @@
 import type { PropType, SlotsType } from 'vue'
+import { iconProps } from '../../icon'
 export type ButtonType = 'primary' | 'success' | 'warning' | 'danger' | 'info'
 export type ButtonSize = 'large' | 'small'
 // 支持button原生的属性
@@ -45,9 +46,7 @@ export const buttonProps = {
   autofocus: {
     type: Boolean
   },
-  icon: {
-    type: String
-  },
+  icon: iconProps.icon,
   loading: {
     type: Boolean
   }
