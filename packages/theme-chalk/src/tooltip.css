@@ -9,6 +9,7 @@
   &.is-dark {
     --mc-popover-text-color: var(--mc-bg-color);
     --mc-popover-bg-color: var(--mc-text-color-primary);
+    --mc-popover-border-color: var(--mc-text-color-primary);
   }
 
   display: inline-block;

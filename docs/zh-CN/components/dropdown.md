@@ -29,7 +29,7 @@ demo-preview=../../examples/dropdown/trigger.vue
 
 :::
 
-## 可控模式
+## 受控模式
 
 可以配置为可控模式，添加`manual`属性即可。然后可以使用实例上面的 `show` 和 `hide` 方法打开关闭下拉菜单。
 
@@ -51,7 +51,7 @@ demo-preview=../../examples/dropdown/manual.vue
 | open-delay     | 打开延迟，最小值为50                                   | `number`                                                                                                                                                                     | 50     |
 | close-delay    | 关闭延迟，最小值为50                                   | `number`                                                                                                                                                                     | 50     |
 | trigger        | 触发方式                                               | `enum` - `'hover'                                                \| 'click'`                                                                                                 | hover  |
-| manual         | 是否开启手动触发模式                                   | `boolean]`                                                                                                                                                                   | false  |
+| manual         | 是否开启手动触发模式                                   | `boolean`                                                                                                                                                                    | false  |
 | transition     | transition name                                        | `string`                                                                                                                                                                     | ''     |
 | hideAfterClick | 点击以后是否自动隐藏菜单                               | `boolean`                                                                                                                                                                    | true   |
 
@@ -70,6 +70,12 @@ demo-preview=../../examples/dropdown/manual.vue
 | :------------- | :----------------------------- | :----------- |
 | visible-change | 当 tooltip 展示/隐藏时被触发   | `boolean`    |
 | select         | 当选择到某一个选项的时候被触发 | `MenuOption` |
+
+### Dropdown 插槽
+
+| 属性名  | 说明                       |
+| :------ | :------------------------- |
+| default | Dropdown 触发 & 引用的元素 |
 
 ### Dropdown 实例方法
 
