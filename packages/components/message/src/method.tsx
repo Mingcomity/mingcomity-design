@@ -12,7 +12,7 @@ const createMessage = (props: CreateMessageProps) => {
   const id = `message_${seed++}`
   const container = document.createElement('div')
   // 清除
-  const destory = () => {
+  const destroy = () => {
     // 删除数组中的实例
     const idx = instances.findIndex((instance) => instance.id === id)
     if (idx === -1) return
@@ -27,7 +27,7 @@ const createMessage = (props: CreateMessageProps) => {
     }
   }
 
-  const newProps: MessageProps = { ...props, onDestory: destory, id, zIndex: nextZIndex() }
+  const newProps: MessageProps = { ...props, onDestroy: destroy, id, zIndex: nextZIndex() }
   const vnode = <McMessage {...newProps}></McMessage>
   render(vnode, container)
   document.body.appendChild(container.firstElementChild!)
@@ -37,7 +37,7 @@ const createMessage = (props: CreateMessageProps) => {
     vnode,
     props: newProps,
     vm: vnode.component!,
-    destory: manualDestroy
+    destroy: manualDestroy
   }
   instances.push(instance)
   return instance
@@ -59,7 +59,7 @@ export const getLastBottomOffset = (id: string) => {
 
 export const closeAll = () => {
   instances.forEach((instance) => {
-    instance.destory()
+    instance.destroy()
   })
 }
 

@@ -234,6 +234,7 @@ const inlineConsole = (...args: any[]) => {
   console.log(args)
 }
 
+const instance = getCurrentInstance()
 function messageShow(type: any) {
   McMessage({
     message: 'hello message',
@@ -241,7 +242,6 @@ function messageShow(type: any) {
     showClose: true,
     type
   })
-  const instance = getCurrentInstance()
   instance?.proxy?.$message({
     message: 'hello message 全局方法',
     duration: 4000,

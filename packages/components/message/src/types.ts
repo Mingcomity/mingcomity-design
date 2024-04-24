@@ -5,13 +5,13 @@ export interface MessageProps {
   duration?: number
   showClose?: boolean
   type?: 'success' | 'warning' | 'info' | 'danger'
-  onDestory: () => void
+  onDestroy: () => void
   offset?: number
   id: string
   zIndex: number
   transitionName?: string
 }
-export type CreateMessageProps = Omit<MessageProps, 'onDestory' | 'id' | 'zIndex'>
+export type CreateMessageProps = Omit<MessageProps, 'onDestroy' | 'id' | 'zIndex'>
 export interface MessageInstance {
   bottomOffest: number
 }
@@ -20,7 +20,7 @@ export interface MessageContext {
   vnode: VNode
   props: MessageProps
   vm: ComponentInternalInstance
-  destory: () => void
+  destroy: () => void
 }
 export const messageProps = {
   message: {
@@ -38,8 +38,8 @@ export const messageProps = {
     type: String as PropType<MessageProps['type']>,
     default: 'info'
   },
-  onDestory: {
-    type: Function as PropType<MessageProps['onDestory']>
+  onDestroy: {
+    type: Function as PropType<MessageProps['onDestroy']>
   },
   offset: {
     type: Number,

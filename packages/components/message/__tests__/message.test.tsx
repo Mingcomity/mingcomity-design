@@ -24,7 +24,7 @@ describe('Message component', () => {
     const instance = McMessage({ message: 'hello world', duration: 0 })
     await rAF()
     expect(document.querySelector('.mc-message')).toBeTruthy()
-    instance.destory()
+    instance.destroy()
     await rAF()
     expect(document.querySelector('.mc-message')).toBeFalsy()
   })

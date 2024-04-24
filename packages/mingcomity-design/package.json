@@ -24,7 +24,7 @@
   "exports": {
     ".": {
       "types": "./es/index.d.ts",
-      "import": "./es/index.mjs",
+      "import": "./index",
       "require": "./lib/index.js"
     },
     "./global": {

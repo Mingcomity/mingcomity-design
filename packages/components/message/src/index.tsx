@@ -53,7 +53,7 @@ export default defineComponent({
     }
 
     function destroyComponent() {
-      props.onDestory!()
+      props.onDestroy!()
     }
     function updateHeight() {
       height.value = messageRef.value!.getBoundingClientRect().height
