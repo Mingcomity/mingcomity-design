@@ -10,7 +10,7 @@
     "ui",
     "vue"
   ],
-  "homepage": "https://github.com/mingcomity/mingcomity-design",
+  "homepage": "http://47.120.14.252:1110",
   "bugs": {
     "url": "https://github.com/mingcomity/mingcomity-design/issues"
   },
@@ -24,7 +24,7 @@
   "exports": {
     ".": {
       "types": "./es/index.d.ts",
-      "import": "./index",
+      "import": "./es/index.mjs",
       "require": "./lib/index.js"
     },
     "./global": {

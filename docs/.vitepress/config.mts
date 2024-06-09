@@ -27,7 +27,7 @@ export default defineConfig({
     nav,
     footer,
     sidebar,
-    socialLinks: [{ icon: 'github', link: 'https://github.com/mingcomity' }]
+    socialLinks: [{ icon: 'github', link: 'https://github.com/mingcomity/mingcomity-design' }]
   },
   head: [
     [

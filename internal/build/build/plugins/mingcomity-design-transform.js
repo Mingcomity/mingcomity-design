@@ -5,7 +5,9 @@ const PKG_NAME = 'mingcomity-design/es'
 
 const contentForFile = (file) => {
   const content = file.contents.toString()
-  const newContent = content.replace(/@mingcomity-design/g, PKG_NAME)
+  const newContent = content
+    .replace(/@mingcomity-design/g, PKG_NAME)
+    .replace(/mingcomity-design\/es\/theme-chalk/g, 'mingcomity-design/theme-chalk')
   return Buffer.from(newContent)
 }
 
